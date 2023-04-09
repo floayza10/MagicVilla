@@ -1,0 +1,22 @@
+﻿@model List<ModClieClientes>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Mantenimiento de Clientes</h1>
+    <p>Consume de datos desde una Api Rest</p>
+</div>
+<div class="row">
+    <div class="col-12">
+        @{
+            await Html.RenderPartialAsync("~/Views/Shared/_msj_sucess_warning.cshtml");
+        }
+        <div class="col-12" id="div_body">
+            @*AQUI VA CODIGO LISTA DE CLIENTE*@
+            @{
+                await Html.RenderPartialAsync("~/Views/Home/_listaClientes.cshtml");
+            }
+        </div>
+    </div>
+</div>

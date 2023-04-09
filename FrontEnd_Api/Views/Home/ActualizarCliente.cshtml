@@ -1,0 +1,49 @@
+﻿@model List<ModClieClientes>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device=width"/>
+    <title>ActualizarCliente</title>
+</head>
+<body>
+    <div class="card-header">
+        <h3 class="card-title">Actualizar datos del clientes</h3>
+    </div>
+    <div class="card-body">
+        <input asp-for="@Model[0].CliCodigo" id="txtCodigo" type="text">
+        <div class="mb-2">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control form-control-sm" id="txtNombres" asp-for="@Model[0].CliNombres" />
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Apellido</label>
+            <input type="text" class="form-control form-control-sm" id="txtApellidos" asp-for="@Model[0].CliApellidos" />
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Telefono</label>
+            <input type="text" class="form-control form-control-sm" id="txtTelefono" asp-for="@Model[0].CliTelefono" />
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Correo Electronico</label>
+            <input type="text" class="form-control form-control-sm" id="txtEmail" asp-for="@Model[0].CliEmail" />
+        </div>
+    </div>
+    <div class="card-footer">
+        <button id="btn_regresar" class="btn btn-default btn-sm btn-block" data-url='@Url.Action("Regresar","Home")'>
+            <i class="fade fa-plus"></i><< Regresar
+        </button>
+        <button id="btn_actualizar" class="btn btn-success btn-block" data-url='@Url.Action("ActualizarCliente","Home")'>
+            <i class="fade fa-save"></i> Guardar
+        </button>
+    </div>
+
+</body>
+</html>
+@{
+    await Html.RenderPartialAsync("~/Views/Home/_script_clientes.cshtml");
+}
+
+
